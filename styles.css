@@ -21,11 +21,12 @@ body {
     text-align: center;
 }
 
-h1 {
+#calculator-title {
     font-size: 72px;
+    font-weight: bold;;
     font-family: "Lucida Handwriting", cursive, sans-serif;
     color: darkslategray;
-    margin-bottom: 20px;
+    margin-bottom: 48px;
 }
 
 .first-row {
