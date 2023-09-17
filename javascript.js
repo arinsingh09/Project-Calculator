@@ -40,7 +40,7 @@ function outputDigit(digit) {
         current = '';
     }
 
-    if (current.length < 5) {
+    if (current.length < 10) {
         current += digit;
     }
     currentOutput.textContent = current; 
@@ -78,7 +78,7 @@ function evaluateResult() {
             return;
 
         lastOutput.textContent = '';
-        if (last.length > 10) {
+        if (last.length > 20) {
             currentOutput.style.fontSize = '20px';
             currentOutput.textContent = 'LIMIT EXCEEDED!';
         } else {
