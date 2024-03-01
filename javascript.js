@@ -9,6 +9,43 @@ const lastOutput = display.querySelector('#last-output');
 const currentOutput = display.querySelector('#current-output');
 const backspace = document.querySelector('.backspace');
 
+// Event listeners for keyboard input
+document.addEventListener('keydown', handleKeyPress);
+
+function handleKeyPress(event) {
+    const key = event.key;
+
+    // Handle numeric keys
+    if (!isNaN(parseInt(key))) {
+        outputDigit(key);
+    }
+
+    // Handle operator keys
+    if (['+', '-', '*', '/'].includes(key)) {
+        outputOperator(key);
+    }
+
+    // Handle decimal point key
+    if (key === '.') {
+        outputDecimal('.');
+    }
+
+    // Handle equals key
+    if (key === 'Enter') {
+        evaluateResult();
+    }
+
+    // Handle backspace key
+    if (key === 'Backspace') {
+        outputBackspace();
+    }
+
+    // Handle clear key
+    if (key === 'Escape') {
+        clearCalculator();
+    }
+}
+
 // Initialize variables to store calculator state
 let current = '';
 let last = '';
